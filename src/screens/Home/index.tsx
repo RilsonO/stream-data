@@ -128,9 +128,9 @@ export function Home() {
     getUserFollowedStreams();
   }, []);
 
-  // const signOutButtonProps = {
-  //   onPress: your-signOut-function
-  // }
+  const signOutButtonProps = {
+    onPress: handleSignOut,
+  };
 
   return (
     <Container
@@ -157,7 +157,7 @@ export function Home() {
           </UserInfoText>
         </UserInfo>
 
-        <SignOutButton onPress={handleSignOut}>
+        <SignOutButton {...signOutButtonProps}>
           {isLoggingOut ? (
             <ActivityIndicator size={25} color={theme.colors.white} />
           ) : (
